@@ -14,4 +14,4 @@ COPY . .
 EXPOSE 8000
 
 # Start backend server only (serves React build as static)
-CMD ["node", "start"]
+CMD ["npm", "start"]
