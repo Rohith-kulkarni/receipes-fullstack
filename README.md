@@ -1,4 +1,4 @@
-# 🍳 Recipes API (Backend)
+# Recipes API (Backend)
 
 This is the backend service for the **Recipes Svc**, built with Express, and PostgreSQL.  
 The API provides endpoints to manage and fetch recipes, with Swagger documentation included.
@@ -27,3 +27,8 @@ DB_HOST=db
 DB_PORT=5432
 
 PORT=8000
+
+## Setup Instructions
+
+1.npm install
+2.docker-compose up --build
