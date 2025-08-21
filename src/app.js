@@ -3,10 +3,17 @@ import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import recipeRoutes from "./routes/recipeRoutes.js"; // your routes
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+// Fix __dirname for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve React build folder
 app.use(express.static(path.join(__dirname, "build")));
 
 // ---------- Swagger Setup ----------
