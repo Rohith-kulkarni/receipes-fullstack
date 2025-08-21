@@ -41,8 +41,9 @@ app.use("/api/recipes", recipeRoutes);
 // ---------- Start Server ----------
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
+  const publicUrl = process.env.RAILWAY_STATIC_URL || `http://localhost:${PORT}`;
   console.log(`Server running on port ${PORT}`);
-  console.log(`Swagger docs: http://localhost:${PORT}/api-docs`);
+  console.log(`Swagger docs: ${publicUrl}/api-docs`);
 });
 
 export default app;
