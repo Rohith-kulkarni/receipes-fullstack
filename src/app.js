@@ -6,7 +6,6 @@ import cors from "cors";
 
 const app = express();
 app.use(express.json());
-
 app.use(cors());
 
 // ---------- Swagger Setup ----------
@@ -19,12 +18,10 @@ const swaggerOptions = {
       description: "API documentation for Recipes service",
     },
     servers: [
-      {
-        url: "http://localhost:" + (process.env.PORT || 8000),
-      },
+      { url: "/" }, // relative URL works for local & Railway
     ],
   },
-  apis: ["./src/routes/*.js"], // <-- Make sure this path points to your routes folder
+  apis: ["./src/routes/*.js"], // points to your route files
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
